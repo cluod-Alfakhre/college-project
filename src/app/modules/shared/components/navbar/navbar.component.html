@@ -1,0 +1,69 @@
+<nav>
+
+    <h2 class="logo">College</h2>
+
+    <button 
+    mat-icon-button class="example-icon" 
+    aria-label="Example icon-button with menu icon"
+    (click)="toggleSideNav()">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    
+      
+</nav>
+
+<div class="overlay" [ngStyle]="{display: isOpened?'block': 'none'}"  (click)="isOpened = false"></div>
+
+<div class="side-nav" [ngClass]="{active: isOpened}">
+    <div class="theme">
+        <div class="checkbox-wrapper-54">
+            <label class="switch">
+              <input type="checkbox"  #switchTheme (input)="toggleTheme(switchTheme)" >
+              <span class="slider"></span>
+            </label>
+        </div>
+
+    </div>
+
+    <ul class="list" (click)="isOpened = false">
+        <li>
+            <a *appIsAuth routerLink="/student/profile">
+                Profile
+            </a>
+        </li>
+
+        <li>
+            <a *appIsAuth routerLink="/student/dashboard">
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a *appIsAuth routerLink="/student/allowed-subjects">
+                Allowed Subjects
+            </a>
+        </li>
+
+        <li>
+            <a *appIsAuth routerLink="/student/all-subjects">
+                All Subject
+            </a>
+        </li>
+
+        <li>
+            <a  routerLink="/student/profile">
+                Aboute The Developer
+            </a>
+        </li>
+
+        <li>
+
+            <button class="button-30" role="button" *appIsAuth 
+            (click)="logout()"
+            >Logout</button>
+
+        </li>
+    </ul>
+
+</div>

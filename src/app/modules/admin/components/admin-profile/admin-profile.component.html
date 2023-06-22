@@ -1,0 +1,86 @@
+<main>
+    <h1 class="header">Profile Data</h1>
+
+    <div class="content">
+        
+        <div class="user-info grid">
+
+            <div class="avatar flex">
+                <div class="img">
+                    <img src="http://rubick.left4code.com/dist/images/profile-6.jpg" alt="avatar">
+                </div>
+    
+                <div class="text">
+                    <h3 class="name">{{admin?.name}}</h3>
+                    <h3 class="role">Admin</h3>
+                </div>
+    
+            </div>
+
+            <div class="contact">
+                <h3 class="title">Contact Details</h3>
+
+
+                <table>
+
+                    <tr>
+                        <th class="label">
+                            Admin Id
+                        </th>
+                        <td class="info">{{admin?.collegeId}}</td>
+                    </tr>
+
+                    <tr>
+                        <th class="label">
+                            Admin Phone
+                        </th>
+                        <td class="info">091378473</td>
+                    </tr>
+
+                    <tr>
+                        <th class="label">
+                            Admin Specialty
+                        </th>
+                        <td class="info">{{admin?.section == 'cs' ? 'Computer Science' : 'Information Technolegy'}}</td>
+                    </tr>
+
+                </table>
+
+                
+            </div>
+
+        </div>
+        
+        <div class="sections grid">
+
+            <div class="box grid" routerLink="/users">
+
+                <div class="img">
+                    <mat-icon>group</mat-icon>
+                </div>
+
+                <h3 class="title">Users</h3>
+            </div>
+
+            <div class="box grid" routerLink="/users">
+
+                <div class="img">
+                    <mat-icon>school</mat-icon>
+                </div>
+
+                <h3 class="title">Teachers</h3>
+            </div>
+
+            <div class="box grid" routerLink="/users">
+
+                <div class="img">
+                    <mat-icon>table-view</mat-icon>
+                </div>
+
+                <h3 class="title">Sections</h3>
+            </div>
+
+        </div>
+
+    </div>
+</main>

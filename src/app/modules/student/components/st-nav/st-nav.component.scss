@@ -1,0 +1,44 @@
+nav{
+    justify-content: space-between;
+    padding: 5px 0;
+    color: var(--first-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tools{
+    align-items: center;
+    gap: 10px;
+
+    button{
+        all: unset;
+        cursor: pointer;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 50%;
+
+        &:hover{
+            background-color: var(--hover-bg);
+        }
+    }
+}
+.avatar{
+    align-items: center;
+
+    gap: 10px;
+
+    .name{
+        margin: 0;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .img{
+        cursor: pointer;
+        overflow: hidden;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+}

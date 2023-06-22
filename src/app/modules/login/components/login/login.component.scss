@@ -1,0 +1,21 @@
+main{
+    display: grid;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    color: var(--first-color);
+    background-color: var(--main-bg);
+}
+
+form{
+    width: 100%;
+    max-width: 500px;
+    padding-inline: 1rem;
+
+    
+    .field{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+}

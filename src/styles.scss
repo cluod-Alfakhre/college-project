@@ -1,1 +1,362 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+@use '@angular/material' as mat;
+@include mat.core();
+
+$dark-theme: (
+  
+  300: #334770,
+  100: #c2e4ff,
+  700: #273554,
+  900: #1b253b,
+  A100: #021627,
+  A200: #072e4b,
+  A400: #1f9eff,
+  A700: #00518f,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: white,
+    A700: white,
+  )
+);
+
+$gainsboro-palette: (
+  50: #f9f9fa,
+  100: #f3f3f4,
+  200: #ebebec,
+  300: #dcdcdd,
+  400: #b9b9ba,
+  500: #99999a,
+  600: #707071,
+  700: #5d5d5e,
+  800: #3e3e3f,
+  900: #1d1d1e,
+  A100: #f5f5f5,
+  A200: #eaeaeb,
+  A400: #d6d6d7,
+  A700: #838386,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: rgba(black, 0.87),
+    A700: white,
+  )
+);
+
+$crimson-palette: (
+  50: #ffebef,
+  100: #ffcdc5,
+  200: #f0999f,
+  300: #e77179,
+  400: #f24e58,
+  500: #f83a40,
+  600: #e9313e,
+  700: #d72638,
+  800: #ca1e30,
+  900: #bb0d24,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+
+$dark-primary: mat.define-palette($dark-theme, 300, 700, 300);
+$bluesky-accent: mat.define-palette($gainsboro-palette, 300, 100, 500);
+$bluesky-warn: mat.define-palette($crimson-palette, 700);
+
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $dark-primary,
+    accent: $bluesky-accent,
+    warn: $bluesky-warn,
+  )
+));
+
+
+
+
+
+:root{
+    --main-bg: #fff;
+    --sc-bg: #f8f8f9;
+    --nav-bg: #fff;
+    --nav-hover: #f1f0f0;
+    --hover-box: #efefef99;
+    --hover-bg:#6464640d;
+
+    --btn-bg: #fff;
+    --btn-shadow:#D6D6E7;
+    
+    --bar-bg: #fff;
+    --thumb-bg: #d3d0d0;
+
+    --input-bg: #fff;
+
+    --first-color: #000;
+    --text-hover: #4c4c4c7a;
+    --nav-shadow: #110c2e26 0px 0px 3px 0px;
+    --light-theme-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    --side-nav-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+body.dark{
+    --main-bg: #1b253b;
+    --sc-bg: #28334e;
+
+    --bar-bg: #1b253b;
+    --thumb-bg: #2b3752;
+
+    --nav-bg: #1b253b;
+    --nav-hover: #202c46;
+    --input-bg: #293856;
+
+    --btn-bg: #273246;
+    --btn-shadow:#2d3544;
+
+    --second-bg: #232d45;
+    --hover-box: #efefef99;
+    --hover-bg:#ffffff0d;
+    --first-color: #cbd5e1;
+    --text-hover: #ffffff7a;
+
+    --nav-shadow: #5645b526 0px 0px 3px 0px;
+    --side-nav-shadow: #5a5aa740 0px 13px 27px -5px, #0404044d 0px 8px 16px -8px;
+
+    @include mat.all-component-themes($dark-theme);
+
+}
+
+html, body { height: 100%; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar{
+  background-color: var(--bar-bg);
+  width: 8px;
+}
+*::-webkit-scrollbar-thumb{
+  background-color: var(--thumb-bg);
+  border-radius: 15px;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+.flex{
+    display: flex;
+}
+.grid{
+    display: grid;
+}
+
+.main-bg{
+    background-color: var(--main-bg);
+}
+.btn-bg{
+    background-color: var(--btn-bg);
+}
+
+.btn{
+  all: unset;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--first-color);
+  background-color: var(--btn-bg);
+  transition: box-shadow .15s,transform .15s;
+  
+  .mat-icon{
+    font-size: 18px;
+    text-align: center;
+    margin-top: 2px;
+  }
+  span{
+    font-size: 1rem;
+    display: none;
+  }
+
+  @media(min-width: 720px){
+    span{
+      display: inline;
+    }
+  }
+
+  &:focus {
+    box-shadow: var(--btn-shadow) 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, var(--btn-shadow) 0 -3px 0 inset;
+  }
+  
+  &:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, var(--btn-shadow) 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+}
+
+
+
+.checkbox-wrapper-54 input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+  }
+
+  .checkbox-wrapper-54 *,
+  .checkbox-wrapper-54 ::after,
+  .checkbox-wrapper-54 ::before {
+    box-sizing: border-box;
+  }
+
+  /* The switch - the box around the slider */
+  .checkbox-wrapper-54 .switch {
+    --width-of-switch: 3.5em;
+    --height-of-switch: 2em;
+    /* size of sliding icon -- sun and moon */
+    --size-of-icon: 1.4em;
+    /* it is like a inline-padding of switch */
+    --slider-offset: 0.3em;
+    position: relative;
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+    display: inline-block;
+  }
+
+  /* The slider */
+  .checkbox-wrapper-54 .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f4f4f5;
+    transition: .4s;
+    border-radius: 30px;
+  }
+
+  .checkbox-wrapper-54 .slider:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon,1.4em);
+    width: var(--size-of-icon,1.4em);
+    border-radius: 20px;
+    left: var(--slider-offset,0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+    ;
+   transition: .4s;
+  }
+
+  .checkbox-wrapper-54 input:checked + .slider {
+    background-color: #303136;
+  }
+
+  .checkbox-wrapper-54 input:checked + .slider:before {
+    left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+    background: #303136;
+    /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+  }
+
+.mat-mdc-text-field-wrapper{
+    background-color: var(--input-bg);
+}
+
+
+/* CSS */
+.button-30 {
+    align-items: center;
+    appearance: none;
+    background-color: var(--btn-bg);
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,var(--btn-bg) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    color: var(--first-color);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+  }
+  
+  .button-30:focus {
+    box-shadow: var(--btn-shadow) 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, var(--btn-shadow) 0 -3px 0 inset;
+  }
+  
+  .button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, var(--btn-shadow) 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .button-30:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+  

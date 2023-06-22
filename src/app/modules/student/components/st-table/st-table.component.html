@@ -1,0 +1,73 @@
+<main *ngIf="!!subsArray?.length">
+
+    <h3 class="title">{{title}}</h3>
+
+    <table class="main-table">
+        <tr>
+            <th>Subject Name</th>
+
+            <th>Subject Day</th>
+        </tr>
+
+        <tr *ngFor="let subject of subsArray" class="data-row" #dataRow (click)="toggleRow(dataRow)">
+            <td>{{subject.name}}</td>
+
+            <td>{{subject.schedule.day === '' ? 'TuseDay 9Pm' : subject.schedule.day }}</td>
+
+            <table class="more">
+
+                <tr>
+                    <td> Subject Id: {{subject.collegeId}} </td>
+
+                    <td> Section: {{subject.section}} </td>
+                </tr>
+
+                <tr *ngIf="subject.teachers.length != 0">
+                    <th>
+                        Teachers: 
+                    </th>
+
+                    <td *ngFor=" let teacher of subject.teachers"> {{teacher}} </td>
+
+                </tr>
+
+                <tr *ngIf="subject.dependsOn.length != 0">
+                    <th>
+                        Dependencies: 
+                    </th>
+                    <td *ngFor=" let dep of subject.dependsOn"> {{dep.name}} </td>
+
+                </tr>
+
+                <tr class='actions'>
+
+                    <button 
+                        class="btn delete" 
+                        (click)="deleteSubject(subject._id)"
+                        *ngIf="subject?.status === ''">
+
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete</span>
+                    </button>
+
+                    <button 
+                        class="btn add" 
+                        (click)="addSubject(subject.collegeId)"
+                        *ngIf="subject?.allowed" >
+
+                        <mat-icon>add</mat-icon>
+                        <span>Add</span>
+
+                    </button>
+                    
+                </tr>
+                
+            </table>
+        </tr>
+    </table>
+
+</main>
+
+<p *ngIf="!subsArray?.length" class="empty">
+    No Items In {{title}}
+</p>

@@ -1,0 +1,128 @@
+h1,h2,h3{
+    margin: 0;
+}
+
+.title{
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+main{
+    color: var(--first-color);
+}
+
+.content{
+    background-color: var(--sc-bg);
+    border-radius: 12px;
+}
+
+.header{
+    font-size: 22px;
+    font-weight: 500;
+    padding: 1rem 0 2rem;
+    margin: 0;
+}
+
+.avatar{
+
+    padding: 1rem 0;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+
+    .img{
+        overflow: hidden;
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+    }
+
+    h3{
+        font-size: 18px;
+        margin: 0;
+    }
+    .name{
+        margin-bottom: 7px;
+        text-transform: capitalize;
+        max-width: 185px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .role{
+        text-transform: capitalize;
+        color: var(--text-hover);
+    }
+}
+
+.contact{
+    padding: 1rem 0;
+}
+
+table{
+    margin-inline: auto;
+    padding-inline: 1rem;
+
+    tr{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-bottom: 10px;
+    }
+    th{
+        font-weight: 500;
+        text-align: start;
+    }
+    td{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
+
+.sections{
+
+    padding-inline: 1rem;
+    padding-block: 1.3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+}
+
+.box{
+    
+    padding: 10px;
+    justify-items: center;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+    
+
+    &:hover{
+        background-color: var(--hover-bg);
+    }
+    &:last-of-type{
+        grid-column: span 2;
+    }
+
+    .img{
+        .mat-icon{
+            width: 30px;
+            height: 30px;
+        }
+        .material-icons{
+            font-size: 30px;
+        }
+        text-align: center;
+    }
+
+    .title{
+        margin-bottom: 0;
+        font-weight: 400;
+    }
+}

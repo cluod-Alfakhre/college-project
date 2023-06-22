@@ -1,0 +1,57 @@
+<main>
+    <h1 class="header">Profile Data</h1>
+
+    <div class="content">
+        
+        <div class="user-info grid">
+
+            <div class="avatar flex">
+                <div class="img">
+                    <img src="http://rubick.left4code.com/dist/images/profile-6.jpg" alt="avatar">
+                </div>
+    
+                <div class="text">
+                    <h3 class="name">{{student?.name}}</h3>
+                    <h3 class="role">Student</h3>
+                </div>
+    
+            </div>
+
+            <div class="contact">
+                <h3 class="title">Contact Details</h3>
+
+
+                <table>
+
+                    <tr>
+                        <th class="label">
+                            Student Id
+                        </th>
+                        <td class="info">{{student?.collegeId}}</td>
+                    </tr>
+
+                    <tr>
+                        <th class="label">
+                            Student Phone
+                        </th>
+                        <td class="info">091378473</td>
+                    </tr>
+
+                    <tr>
+                        <th class="label">
+                            Student Specialty
+                        </th>
+                        <td class="info">{{student?.section == 'cs' ? 'Computer Science' : 'Information Technolegy'}}</td>
+                    </tr>
+
+                </table>
+
+                
+            </div>
+
+        </div>
+        
+        <app-schedule-subjects *ngIf="student"></app-schedule-subjects>
+
+    </div>
+</main>

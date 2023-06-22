@@ -1,0 +1,52 @@
+<main>    
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+        <h1>Login</h1>
+
+
+        <mat-form-field appearance="outline" class="field">
+            <mat-label>User College Id</mat-label>
+            <input matInput placeholder="Please Type Your Id" formControlName="collegeId">
+            <mat-error *ngIf="collegeId?.invalid">{{getControleError(loginForm.controls.collegeId)}}</mat-error>
+
+            <mat-icon matSuffix 
+            *ngIf="!collegeId?.touched || (!collegeId?.invalid && collegeId?.touched)">
+            sentiment_very_satisfied
+            </mat-icon>
+
+            <mat-icon matSuffix style="color: #f44336" 
+            *ngIf="collegeId?.invalid && collegeId?.touched">
+            sentiment_dissatisfied
+            </mat-icon>
+
+            <mat-hint>82020022</mat-hint>
+        </mat-form-field>
+
+            
+        <mat-form-field appearance="outline" class="field">
+
+            <mat-label>User Password</mat-label>
+            <input matInput [type]="hidePassword ? 'password' : 'text'"  placeholder="Please Type Your Password" formControlName="password">
+
+            <button mat-icon-button matSuffix type="button"
+            (click)="hidePassword = !hidePassword" 
+            [attr.aria-label]="'Hide password'" 
+            [attr.aria-pressed]="hidePassword" >
+
+            <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+        </button>
+            
+
+            
+
+            <mat-hint>12345</mat-hint>
+        </mat-form-field>
+
+        <button mat-raised-button color="primery">Submit</button>
+
+    </form>
+    
+     
+</main>

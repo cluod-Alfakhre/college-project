@@ -1,0 +1,8 @@
+<app-st-table
+*ngIf="!!allowedSubs.length"
+[title]="'allowed subjects'"
+[subsArray]="allowedSubs"
+(onUpdate)="updateComponent()"
+>
+
+</app-st-table>
